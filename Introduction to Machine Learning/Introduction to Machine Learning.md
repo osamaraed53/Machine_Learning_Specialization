@@ -74,7 +74,25 @@ $$
 $$
 {\huge
 
-	J(W,b) = \frac{1}{2m} \sum_{i=1}^{m} \left(f w,b(x^{(i)}) - y^{(i)} \right )^ 2
+	J(w,b) = \frac{1}{2m} \sum_{i=1}^{m} \left(f w,b(x^{(i)}) - y^{(i)} \right )^ 2
 }
 $$
-## the idea is find  $\hat{y}$ closer to $y^{(i)}$ for all ($x^{(i)}$ , $y^{(i)}$ )
+## the idea is find  $\hat{y}$ closer to $y^{(i)}$ for all ($x^{(i)}$ , $y^{(i)}$ ) by 
+
+![alt text](./assets/image02.png)
+
+### summarization 
+
+The goal of linear regression is to find the parameters w or w and b that results in the smallest possible value for the cost function J.
+
+model : $\large f_{w,y} = wx + b$ 
+
+parameter : $\large  w,b$
+
+cost function :$\large J(w,b) = \frac{1}{2m} \sum_{i=1}^{m} \left(f w,b(x^{(i)}) - y^{(i)} \right )^ 2$
+
+Objectives : $\large minimize_{w,b} J(w,b)$
+
+Cost function like this 
+![alt text](image.png)
+![alt text](./assets/C1_W1_L3_S2_Lecture_b.png)
