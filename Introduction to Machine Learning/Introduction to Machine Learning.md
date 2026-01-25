@@ -39,7 +39,6 @@ Dimensionality reduction : Compress data using fewer number.
 
 # Regression Model
 
-
 > [!Note]
 > Traning set : data used to train the model
 
@@ -96,3 +95,74 @@ Objectives : $\large minimize_{w,b} J(w,b)$
 Cost function like this 
 ![alt text](image.png)
 ![alt text](./assets/C1_W1_L3_S2_Lecture_b.png)
+
+
+
+# Gradient descent 
+
+>[!Note]
+> $\alpha$ call as the learning rate.
+> the learning rate is usualla a small positive number betweenn 0 and 1, and it might be, say 0.01
+> what alpha dose is , it basically controls how big of a step you take downhill.
+> the choice of the learning rate alpaha will have a huge impact on the efficience of implemntaion of gradient descent.
+
+w = $w -\alpha \frac{d}{dw} J(w,b)$
+b = $b -\alpha \frac{d}{db} J(w,b)$
+
+>[!Warning]
+> Should Update w and b Simultaneously
+> ![alt text](image-1.png)
+>
+
+## Learing Rate 
+If $\alpha$ is too small : gradient descent may be slow, It will take a very Long time because it's going to take these tiny, tiny baby steps, and it's going to need alot of steps before it gets anywhere close to the minimum.
+
+If $\alpha$ is too large : 
+	 Gradient descent may : \
+      - Overshoot, never reach minimum \
+      - Fail to converge and may even diverge 
+
+**What happens if Gradient Descent reaches a local minimum?**
+
+What is special about a minimum?
+At a local minimum of the cost function 
+J(w):
+- The curve is flat
+- The tangent line slope(gradient) = 0
+- That means: $\frac{d}{db} J(w) = 0$
+
+
+If you're already at the minimum…
+$$
+\frac{d}{db} J(w) = 0
+$$
+The update becomes:
+$$
+w = w - \alpha \cdot 0
+$$
+Which simplifies to:
+$$
+w = w
+$$
+Nothing changes.
+
+So:
+Gradient descent stops automatically at a local minimum.
+
+No special stopping command needed - math handles it.
+
+**Why steps get smaller near the minimum (SUPER important)**
+Even with a fixed learning rate α, steps shrink. Why?
+
+Because step size =
+$$
+ \alpha * gradient
+$$ 
+| Position         | Slope (gradient) | Step size      |
+| ---------------- | ---------------- | -------------- |
+| Far from minimum | Large            | Big step       |
+| Closer           | Medium           | Smaller step   |
+| Very close       | Tiny             | Very tiny step |
+| At minimum       | 0                | No step        |
+
+So the algorithm naturally slows down.
