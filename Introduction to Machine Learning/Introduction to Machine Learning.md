@@ -166,3 +166,31 @@ $$
 | At minimum       | 0                | No step        |
 
 So the algorithm naturally slows down.
+
+Gradiant descent algorithm after derivative 
+
+repeat until convergence  {	
+$$
+{
+  w  = w - \alpha \frac{1}{m} \sum_{i=1}^{m} \left(  f_{w,b}{x^{(i)}} - y^{(i)} \right) x^{(i)}
+}
+$$
+$$
+{
+  b  = b - \alpha \frac{1}{m} \sum_{i=1}^{m} \left(  f_{w,b}{x^{(i)}} - y^{(i)} \right)^2 
+}
+$$
+}
+remember : shlould update w and b simultaneously 
+
+>[!Note]
+> Global minimum : the points that has the lowest possible value for the cost function j out of all possible points.
+
+remember : depending on where you intiialize the parameters w and b, you can end up at differnt local minima.
+
+- when you are using a squaared error cost dunction with linear regression, the cost functin dose not and will never have multiple local minima, it has a single global minimum because of this bow shape.  
+- the technical term for this is that this cost function is a convex function. 
+- informally, a convex function is a bow-shaped function and it cannot have any local minima other than the single global minimum.
+
+### "Batch" gradient descent
+> "batch" : Each step of gradient descent uses all the traning exampless instead of just a subset a of the training data
