@@ -93,7 +93,7 @@ cost function :$\large J(w,b) = \frac{1}{2m} \sum_{i=1}^{m} \left(f w,b(x^{(i)})
 Objectives : $\large minimize_{w,b} J(w,b)$
 
 Cost function like this 
-![alt text](image.png)
+![alt text](./assets/image03.png)
 ![alt text](./assets/C1_W1_L3_S2_Lecture_b.png)
 
 
@@ -110,8 +110,9 @@ w = $w -\alpha \frac{d}{dw} J(w,b)$
 b = $b -\alpha \frac{d}{db} J(w,b)$
 
 >[!Warning]
-> Should Update w and b Simultaneously
-> ![alt text](image-1.png)
+> Should Update w and b Simultaneously \
+> *simultaniously* means that you calculate the partial derivatives for all the parameters before updating any of the parameters.
+> ![alt text](./assets/image04.png)
 >
 
 ## Learing Rate 
@@ -194,3 +195,6 @@ remember : depending on where you intiialize the parameters w and b, you can end
 
 ### "Batch" gradient descent
 > "batch" : Each step of gradient descent uses all the traning exampless instead of just a subset a of the training data
+
+
+
