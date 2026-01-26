@@ -33,3 +33,5 @@ we add arrow up on top(vector) of x and w to signify these list of numbers (vect
 > 3. can use GPU when write vesctorized code to help execute code more much quikly
 >
 > ![alt text](./assets/image12.png)
+
+
