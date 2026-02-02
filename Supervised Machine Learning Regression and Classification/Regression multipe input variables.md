@@ -34,4 +34,49 @@ we add arrow up on top(vector) of x and w to signify these list of numbers (vect
 >
 > ![alt text](./assets/image12.png)
 
+Previos notaion & Vector notaion 
+![alt text](./assets/image13.png)
+
+Gradient descent : One feature & N feature
+![alt text](image.png)
+
+## An alternative to gradient descent
+### Normal equation 
+> it turns out to be possible to use an advanced linear algebra library to just solve for e and b all in one go without iterations.
+- only for liner regression   
+- Solve for w,b without it iterations
+**Disadvantages**
+- Doesn't generalize to other learning algorithm.
+- Slow when number of features is larger ($> 10,000$)   
+**What we need to know** 
+- Normal equation method may be used in machine learning libraries that implement linear regression. 
+- Gradient descnt is the recommended method for finding parameters w,b.  
+**Extra note by Osama**
+The **Normal Equation** is a direct mathmematical formula used in linear regression to find the best parameters without using gradient descent. 
+
+Instead of iterating step by step, it gives you the answer in one shot.
+
+we need to find parameters
+$$
+\theta =
+\begin{bmatrix}
+b \\
+w_1 \\
+w_2 \\
+\vdots \\
+w_n
+\end{bmatrix}
+$$ 
+so that : 
+$$
+h_\theta(x) = X\theta
+$$
+Where : 
+- X = feature matrix (with a column of 1s for bias)
+- $\theta$ (theta) = parameters (weights + bias)
+- y = target values
+  
+
+  
+## Feature scaling
 
