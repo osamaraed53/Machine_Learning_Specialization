@@ -185,6 +185,9 @@ $$
 \mu = \frac{1}{n} \sum_{i=1}^{n} X_i
 $$
 #### Standard Deviation Formula 
+> Standard deviation measures how spread out the values of a dataset are around the mean.
 $$
 \sigma = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (X_i - \mu)^2}
 $$
+
+
