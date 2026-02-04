@@ -79,4 +79,112 @@ Where :
 
   
 ## Feature scaling
+Problem Without Feature Scaling
+When feature ranges are very different:
 
+1️⃣ Cost function shape becomes distorted
+The contour plot (cost vs. w₁, w₂) looks like:
+Tall, skinny ellipses instead of circles.
+
+Why?
+- Small change in w₁ → big change in prediction (because x₁ is large)
+- Small change in w₂ → tiny change in prediction
+
+So the cost function is much steeper in one direction.
+
+2️⃣ Gradient descent becomes slow 😩
+Instead of going straight to the minimum, it:
+- Gradient descent moves in a zigzag slow path
+- The cost function becomes long and narrow (oval shape)
+- Takes many small steps (Training takes longer)
+
+Large feature values → usually need small weights  
+Small feature values → usually need large weights
+
+Solution: Feature Scaling
+> Feature scaling means transforming features so they have similar ranges.
+
+**Example:**
+ Convert both features to range between 0 and 1   
+**Result:**
+- Cost function becomes more circular
+- Gradient descent moves directly toward minimum
+- Training becomes much faster
+
+### Method One : Divide by Maximaum Value (Simple Scaling)
+$$
+
+X_{scaled} = \frac{X}{X_{max}}
+
+$$
+Example:  
+If X1 range = 3 → 2000
+→ Divide by 2000  
+If X2 range = 0 → 5
+→ Divide by 5  
+**Result:**  
+Features become between 0 and 1
+
+### Method Two : Mean Normalization
+> This take values ceterd around 0
+
+$$ 
+X_{normalized} = \frac{X - \mu}{X_{max} - X_{min}}
+$$
+Where:
+
+- $(\mu$) = Mean (average) of the feature  
+- $(X_{max}$) = Maximum value of feature  
+- $(X_{min}$) = Minimum value of feature
+
+Steps:
+1. Calculate average (mean)
+2. Subtract mean from each value
+3. Divide by feature range
+
+**Result:**
+Values usually between -1 and 1
+
+### Method Three : Z-Score Normalization (Most Common)
+
+$$
+X_{normalized} = \frac{X - \mu}{\sigma}
+$$
+Where:
+
+- $(\mu$) = Mean of the feature  
+- $(\sigma$) = Standard deviation of the feature
+  
+**Steps:**
+1. Calculate mean
+2. Calculate standard deviation
+3. Normalize data
+
+**Result:**
+- Data centered around 0  
+- Used widely in machine learning
+
+### When Scalling is important
+> You should scale when feature value are:
+- Very large $\rArr$ like 0 to 1000 
+- Very samll $\rArr$ like 0.001
+- Around 100 compared to other featuers 
+
+### Importent Note
+> Feature scaling is 
+- Almost always safe 
+- Rarely harmful 
+- Usually improves gradient descent speed 
+
+### Final Big Picture
+> Feature scaling helps machine learning models learn faster by making featuers have similar value ranges. it improves gradient descent performance and helps the model converge faster.
+
+### Extra Helpful Formulas 
+#### Mean Formula
+$$
+\mu = \frac{1}{n} \sum_{i=1}^{n} X_i
+$$
+#### Standard Deviation Formula 
+$$
+\sigma = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (X_i - \mu)^2}
+$$
