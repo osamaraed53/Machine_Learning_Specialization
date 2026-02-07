@@ -191,3 +191,53 @@ $$
 $$
 
 
+## Checking gradient descent for convergence
+### What Does Convergence Mean?
+Gradient Descent is said to **converge** when it finds values of parameters **w** and **b** that minimize the **cost function J**, or get very close to the global minimum.
+### Using a Learning Curve to Check Convergence
+#### What to Plot
+- **X-axis:** Number of gradient descent iterations  
+- **Y-axis:** Cost function value **J**  
+- This plot is called a **learning curve**
+
+Each point on the curve shows the value of the cost **J** after one iteration (one simultaneous update of **w** and **b**).
+
+
+### Interpreting the Learning Curve
+#### When Gradient Descent Is Working Well
+- The cost **J decreases after every iteration**
+- The curve slopes downward smoothly
+- After enough iterations, the curve **levels off (flattens)**
+
+A flat curve means:
+- The cost is no longer decreasing significantly
+- Gradient Descent has **converged**
+- Further training gives little improvement
+
+#### Warning Signs
+- If the cost **increases** after an iteration:
+  - The learning rate **α is too large**, or
+  - There is a **bug in the implementation**
+
+The learning curve helps detect these issues early.
+
+
+### Number of Iterations to Converge
+- There is **no fixed number** of iterations
+- Some problems converge in **tens** of iterations
+- Others may require **thousands or more**
+
+Plotting the learning curve helps decide **when to stop training**.
+
+### Automatic Convergence Test (Optional)
+
+#### Epsilon-Based Test
+- Choose a small number **ε** (epsilon), e.g.:
+  - ε = 0.001
+- If the decrease in cost **J** between iterations is less than **ε**, declare convergence
+
+#### Practical Note
+- Choosing a good ε is difficult
+- Visual inspection of the learning curve is often more reliable
+
+## Choosing the learning rate

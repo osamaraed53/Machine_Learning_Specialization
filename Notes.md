@@ -16,3 +16,10 @@ If the formela uses :
 Outliers affect it, but not too much **Why?** No explosion like squaring.
 
 ### Rule 3 - Median or Ranking $\rArr$ Very Resistant to Outliers
+
+if method depends on
+- Median 
+- Percentiles 
+- Ordering values insted of averaging
+  
+Outliers almost dont't affect it 
