@@ -241,3 +241,12 @@ Plotting the learning curve helps decide **when to stop training**.
 - Visual inspection of the learning curve is often more reliable
 
 ## Choosing the learning rate
+![alt text](./assets/image15.png)
+
+**Practical strategy to choose :**
+Try a range of learning rates, such as:
+0.001 → 0.003 → 0.01 → 0.03 → 0.1
+Each value is roughly 3× larger than the following one.
+Run gradient descent for a few iterations and plot the cost.
+
+Choose the largest learning rate that decreases the cost quickly and consistently.
